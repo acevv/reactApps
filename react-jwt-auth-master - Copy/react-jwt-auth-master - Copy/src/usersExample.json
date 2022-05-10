@@ -1,0 +1,20 @@
+{
+    "id": 1,
+    "username": "jdimitar",
+    "email": "jdimitar@gmail.com",
+    "roles": [
+      "ROLE_USER"
+    ],
+    "accessToken": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqZGltaXRhciIsImlhdCI6MTY0OTI2NjkwMiwiZXhwIjoxNjQ5MzUzMzAyfQ.egymKhzmhoHZVRfeOmMATcRketujXniL_X-GzJDQZ8rKlxjxmM_0MMdfAqGLxwj_aZQh0dtJBcO1C1Uc0oIa9g",
+    "tokenType": "Bearer"
+  }
+  {
+    "id": 2,
+    "username": "vlatko",
+    "email": "vlatko@gmail.com",
+    "roles": [
+      "ROLE_ADMIN"
+    ],
+    "accessToken": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2bGF0a28iLCJpYXQiOjE2NDkyNjgyNzYsImV4cCI6MTY0OTM1NDY3N30.I2ULzyoLRsoxaE7vLATfRQ46OUrhmDZhCIzZzcRPXyVnGtlDPTEs98MaDAlNDSNEvmxFPa9xKEQ5RFLV0IUbWA",
+    "tokenType": "Bearer"
+  }
