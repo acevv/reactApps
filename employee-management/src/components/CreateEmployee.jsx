@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import EmployeeService from "../services/EmployeeService";
 
 export default class CreateEmployee extends Component {
   constructor(props) {
@@ -8,11 +9,42 @@ export default class CreateEmployee extends Component {
       lastName: "",
       emailId: "",
     };
+
+    this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this);
+    this.changeLastNameHandler = this.changeLastNameHandler.bind(this);
+    this.changeEmailHandler = this.changeEmailHandler.bind(this);
+    this.saveEmployee = this.saveEmployee.bind(this);
   }
 
   changeFirstNameHandler = (event) => {
     this.setState({ firstName: event.target.value });
   };
+
+  changeLastNameHandler = (event) => {
+    this.setState({ lastName: event.target.value });
+  };
+
+  changeEmailHandler = (event) => {
+    this.setState({ emailId: event.target.value });
+  };
+
+  saveEmployee = (e) => {
+    e.preventDefault();
+    let employee = {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      emailId: this.state.emailId,
+    };
+
+    EmployeeService.createEmployee(employee).then((res) => {
+      this.props.history.push("/emploees");
+    });
+    console.log("employee => " + JSON.stringify(employee));
+  };
+
+  cancel() {
+    this.props.history.push("/employees");
+  }
   render() {
     return (
       <div>
@@ -32,6 +64,39 @@ export default class CreateEmployee extends Component {
                       onChange={this.changeFirstNameHandler}
                     ></input>
                   </div>
+                  <div className="form-group">
+                    <label>Last Name</label>
+                    <input
+                      placeholder="Last Name"
+                      name="lastName"
+                      className="form-control"
+                      value={this.state.lastName}
+                      onChange={this.changeLastNameHandler}
+                    ></input>
+                  </div>
+                  <div className="form-group">
+                    <label>Email</label>
+                    <input
+                      placeholder="Email"
+                      name="emailId"
+                      className="form-control"
+                      value={this.state.emailId}
+                      onChange={this.changeEmailHandler}
+                    ></input>
+                  </div>
+                  <button
+                    className="btn btn-success"
+                    onClick={this.saveEmployee}
+                  >
+                    Save
+                  </button>
+                  <button
+                    className="btn btn-danger"
+                    onClick={this.cancel.bind(this)}
+                    style={{ marginLeft: "10px" }}
+                  >
+                    Cancel
+                  </button>
                 </form>
               </div>
             </div>
