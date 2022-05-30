@@ -1,1 +1,3 @@
 node_modules/
+.DS_Store
+food-order-app/food-order-app/.eslintcache
