@@ -17,7 +17,7 @@ const cartReducer = (state, action) => {
     );
     console.log(existingCartItemIndex);
 
-    const existingCartItem = state.item[existingCartItemIndex];
+    const existingCartItem = state.item[1];
 
     console.log(existingCartItem);
 
